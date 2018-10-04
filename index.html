@@ -43,16 +43,20 @@
         if(window.location.hostname=='127.0.0.1' || window.location.hostname=='localhost') $vm.localhost=true;
         //------------------------------------
         $vm.module_links=[
-            //"https://www.vmiis.com/modules/clinical-trials/clinical-trials.json",
+            "https://clinical-trials.wappsystem.com.au/spardac.json",
         ];
         $vm.module_list={
-            "home": {"url":"https://www.vmiis.com/modules/clinical-trials/online-questionnaire/home.html"},
+            "home": {"url":"https://modules.wappsystem.com.au/clinical-trials/online-questionnaire/home.html"},
         }
         //------------------------------------
         $vm.local_url=function(url){
-            var urlR=url;
-            if($vm.localhost==true){
-                urlR=urlR.replace('https://www.vmiis.com/','http://127.0.0.1:8000/wappsystem/');
+            if(url!=undefined){
+                var urlR=url;
+                if($vm.localhost==true){
+                    urlR=urlR.replace('https://modules.wappsystem.com.au/','http://127.0.0.1:8000/wappsystem/modules/');
+                    urlR=urlR.replace('https://wappsystem.com.au/','http://127.0.0.1:8000/wappsystem/');
+                    urlR=urlR.replace('https://clinical-trials.wappsystem.com.au/','http://127.0.0.1:8000/wappsystem/clinical-trials/');
+                }
             }
             return urlR;
         }
