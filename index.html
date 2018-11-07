@@ -6,6 +6,8 @@
         <meta name="author" content="Wappsystem, wappsystem@gmail.com">
         <link rel="icon" href="data:,">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" />
+        <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Nunito|Nunito+Sans|Roboto+Slab' />
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.2.1.min.js"></script>        
     </head>
     <body>
         <div id=header class=vm-header></div>
@@ -43,7 +45,7 @@
         if(window.location.hostname=='127.0.0.1' || window.location.hostname=='localhost') $vm.localhost=true;
         //------------------------------------
         $vm.module_links=[
-            "https://clinical-trials.wappsystem.com.au/spardac.json",
+            "https://spardac.wappsystem.com.au/spardac.json",
         ];
         $vm.module_list={
             "home": {"url":"https://modules.wappsystem.com.au/clinical-trials/online-questionnaire/home.html"},
@@ -55,7 +57,7 @@
                 if($vm.localhost==true){
                     urlR=urlR.replace('https://modules.wappsystem.com.au/','http://127.0.0.1:8000/wappsystem/modules/');
                     urlR=urlR.replace('https://wappsystem.com.au/','http://127.0.0.1:8000/wappsystem/');
-                    urlR=urlR.replace('https://clinical-trials.wappsystem.com.au/','http://127.0.0.1:8000/wappsystem/clinical-trials/');
+                    urlR=urlR.replace('https://spardac.wappsystem.com.au/','http://127.0.0.1:8000/wappsystem/spardac/');
                 }
             }
             return urlR;
@@ -65,8 +67,8 @@
         for(p in $vm.module_list) $vm.module_list[p].url=$vm.local_url($vm.module_list[p].url);
         //------------------------------------
         $vm.default_title="Questionnaire Portal";
-        var txt=", Wappsystem Pty Ltd. <span id=FL_0>Clinical Trial questionnaire portal. Open source code on GitHub (<a style='color:#fff' target=_blank href=https://github.com/wappsystem/clinical-trials>https://github.com/wappsystem/clinical-trials</a> ";
-        txt+="and <a style='color:#fff' target=_blank href=https://github.com/wappsystem/modules/tree/master/clinical-trials>https://github.com/wappsystem/modules/tree/master/clinical-trials</a>).</span>"
+        var txt=", Wappsystem Pty Ltd. <span id=FL_0>Clinical Trial questionnaire portal. Open source code on GitHub (<a style='color:#fff' target=_blank href=https://github.com/wappsystem/spardac>https://github.com/wappsystem/spardac</a> ";
+        txt+="and <a style='color:#fff' target=_blank href=https://github.com/wappsystem/modules/tree/master/spardac>https://github.com/wappsystem/modules/tree/master/spardac</a>).</span>"
         $('#text_0').html("Copyright &copy; "+(new Date()).getFullYear()+txt);
         //------------------------------------
         $('#c_header').contents().appendTo('#header');
