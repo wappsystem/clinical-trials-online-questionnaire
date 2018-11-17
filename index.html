@@ -35,7 +35,7 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.2.1.min.js"></script>
     <script main>
         //------------------------------------
-        $vm={};$VmAPI={};$vm.ver=[1.11,1.11];
+        $vm={};$VmAPI={};$vm.ver=[1.12,1.12];
         $vm.start_time=new Date().getTime();
         $vm.api_path_development="https://cbs.wappsystem.com/dev/";
         $vm.api_path_production="https://cbs.wappsystem.com/pro/";
@@ -67,7 +67,7 @@
         for(p in $vm.module_list) $vm.module_list[p].url=$vm.local_url($vm.module_list[p].url);
         //------------------------------------
         $vm.default_title="Questionnaire Portal";
-        var txt=", Wappsystem Pty Ltd. Clinical Trial questionnaire portal.";
+        var txt=", Wappsystem Pty Ltd. Spardac participant's questionnaire portal.";
         $('#text_0').html("Copyright &copy; "+(new Date()).getFullYear()+txt);
         //------------------------------------
         $('#c_header').contents().appendTo('#header');
